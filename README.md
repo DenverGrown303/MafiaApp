@@ -51,3 +51,4 @@ Response to RFP-AG from Omerta Group:</strong>
 <h3>Resources</h3>
 <a href="https://trello.com/b/aMUQ1GGk/responsibilitygroup">Trello Board</a><br>
 <a href="http://www.builtincolorado.com/">Wire Frames</a><br>
+<a href="https://github.com/DenverGrown303/MafiaApp/blob/master/UserStores.md">User Stories</a><br>
