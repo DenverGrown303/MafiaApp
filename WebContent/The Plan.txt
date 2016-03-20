@@ -1,0 +1,106 @@
+THE PLAN:
++------------------------------------------------------------------------------+
++---------------HIGHER-TIER FUNCTIONALITY--------------------------------------+
++------------------------------------------------------------------------------+
+Two distinct client-facing sides:
+
+            UBER-side: where customers can book jobs from goons, and where goons can view/accept jobs (mafia soldier functionality here)
+
+            Retail-side: site for a store like "Stephenson Electronics Blowout Superstore" that has clearly been busted out by the mafia (more on this below)
+
+Last but not least:
+
+            SQL database foundation:
+
+                          "general fund" database: hold 500 mobsters at a time, always create a new random mobster when taking one out of the general fund, always keeping the hidden reserve at 500
+
+                          user database: login credentials, shopping carts, an UBER-style bi-directional rating system, order history
+
+                          jobs request database: place to put general job requests, until taken by a particular mafiosi.  (Using intervals, set a certain amount of time a job will sit there until it is automatically removed from this database and processed)
+
+                          *products database: obviously, a means of keeping track of the thousands of items of inventory still left.  Ultimate floor though, after which there will be no more (if it starts with 600 TV's, and we "sell" 600 TV's, there will be no more, e.g.)
+
+                          *Stephenson Electronics Blowout Superstore HR database: keep track of employees still remaining under the new management.
++------------------------------------------------------------------------------+
+UBER-side: payment method - Favors (similar drop-down interface to Book-A-Goon below)
+
++------------------------------------------------------------------------------+
+UBER-side: ability to view available goons and hire them for job
+
+
+********Book-A-Goon page layout mockup:
+
+        Request: "Talk to"           Target: "That Guy"             Regarding: "Some shit he shouldn't'a been running his mouth about"
+    (drop        "Handle"                   "Some Guy"                        "Some shit that ain't any of his business"
+      down       "Take Care Of"             "That rat prick"                  "Legitimate Business Dispute"
+        menus    "Straighten Out"           etc.                              etc.
+          -->)   "Get in line"
+                  etc.
+                                                                    [SUBMIT BUTTON]
++------------------------------------------------------------------------------+
+UBER-side: on login, randomly assign anywhere from 20 - 40% of Goons "unavailable"
+
++------------------------------------------------------------------------------+
+UBER-side: customer makes a request, which is persisted to a "request database" until it is processed by a mobster
+
++------------------------------------------------------------------------------+
+UBER-side: mobster can view outstanding requests, including those labeled "GENERAL" as well as any
+specifically requesting them personally.
+
++------------------------------------------------------------------------------+
+RETAIL-side: customers can view and purchase products, all of which are currently under steep markdown
+              (example: normal-looking amazon-type product page for a 60 inch flat screen, but its been marked down from "$3999" to "$200 cash")
++------------------------------------------------------------------------------+
+RETAIL-side: new management (the mafia) isn't very good with HTML/CSS.  This results in dynamic, random fuck-ups and miscues in the HTML and CSS that GO AWAY OVER TIME (more on this in "HEART OF THE APP" section)
+
++------------------------------------------------------------------------------+
+RETAIL-side: new products continually added with very basic, ugly HTML/CSS for things like "CEMENT SHOES" and other mafia-stuff.  Once again, HTML/CSS on RETAIL-SIDE gets better over time (realtime)
+
++------------------------------------------------------------------------------+
++------------------------------------------------------------------------------+
++------------Stupid little EXTRA SHIT to SHOW OFF------------------------------+
+random, dynamic emails sent around on an actual email server we set up for our app
+
+a JS function that runs when you hit "reply all" that triggers a cascade of thousands of RANDOMLY-generated "Don't hit reply all" messages.
+        this function runs for a random amount of time (until, say, a stringent numerical requirement is met), but always ends with a different message from the Don himself,
+        something along the lines of
+
+                                          From: Don_Giacomo_AlDente@mafia.com
+                                          SUBJECT: RE:RE:RE:RE:RE:RE:RE:RE:Don't hit REPLY ALL, guys!
+                                          MESSAGE: The next fucking person who sends one of these emails, I'm gonna
+                                                          put my pants on, come down the stairs
+                                                          and put a cigarette out on you.  Those ones and zeros ain't free.
+
+                                                          Smarten Up,
+                                                          Don Giacomo AlDente
+
+        and every once-in-awhile, one last message like "RE:RE:RE:STOP HITTING REPLY ALL" should pop up twenty- to thirty seconds later.
+        if we get that last message, then nothing should happen EXCEPT some small charge should hit one of the columns in the STEPHENSON db concerning a pending worker's comp claim related to an acute burn and laceration or some bullshit
+
+        On March 15th every year (the date of the original release of The Godfather, and the assassination of Julius Ceasar, interestingly), STEPHENSON ELECTRONICS should have a "Day of my Daughter's Wedding" sale
+
+        products left in STEPHENSON ELECTRONICS DATABASE will eventually all be gone (either by actual custies buying it, or the random action of the BEATING HEART function)
+
+        new products will begin to be listed, initially as the most basic blue hypertext links with underlines that will lead to white pages with text in the upper left hand corner
+                  also, a ton of pieces of broken HTML/CSS (all faked and randomized, of course).  Shit like "Check out our <i Sale!</i>" where the "<i" and "</i>" are a pre-made "fuckup" that can be modularly plugged in on a random basis into what we pass to the various .innerHTML methods
+                  based on an interval set to run a real-time month, these broken code pieces will become less and less likely, and will dissappear altogther.
+                  After that milestone, the new Mafia Webmaster may
+
+
++------------------------------------------------------------------------------+
++------------Now on to the BEATING HEART OF THE APP----------------------------+
++------------------------------------------------------------------------------+
+
+FUNKY INTERVAL BULLSHIT:
+            (specifically:)
+                          something akin to an "init()" method that runs every (3 minutes?) that basically moves everything forward one "unit" of time
+                          (generate random emails, including holiday- and event-specific emails, run the numbers against weighted random death draws for each of the mafiosi, dynamically update RETAIL-side inventory, things like that)
+
+
++------------------------------------------------------------------------------+
+FUNKY ASYNCHRONOUS CALL BULLSHIT:
+            (specifically:)
+                          those "weighted-random death draws" take REAL CDC mortality data to determine chances (by heart disease or gun violence or whatever)
+                          point is: we're periodically hitting an outside database and updating the algorithm using that data.
+
+                          ALSO: we should find some socket to hit that has real-time OLIVE OIL FUTURES MARKET data, and very slightly modulate the chances any given mobster "dies" by tying it to the international OLIVE OIL MARKET

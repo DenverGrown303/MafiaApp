@@ -19,6 +19,7 @@
 		-Tables in a SQL database schema, with one-to-one, one-to-many, and many-to-many relationships.
 	6.A separate Web app, and separate Java app.
 		-Encapsulation for the data that's displayed on the HTML/JS versus the Java app that will manipulate the data.
+	7. Utilize Express.js framework to worth with a global object as opposed to a "document"
 **/
 
 /**
