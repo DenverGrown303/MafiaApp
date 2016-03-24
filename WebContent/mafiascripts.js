@@ -10,8 +10,8 @@
 		-Will use to display all of our views on the index.html as one dynamic web page.
 	3.RESTful calls
 		-will use RESTful calls:
-			HTTP verbs (GET, POST, PUT, DELETE, etc.) that web browsers use to retrieve web 
-			pages and to send data to remote servers. REST systems interface with external systems 
+			HTTP verbs (GET, POST, PUT, DELETE, etc.) that web browsers use to retrieve web
+			pages and to send data to remote servers. REST systems interface with external systems
 			as web resources identified by Uniform Resource Identifiers (URIs), for example: /people/tom,
 	4.AJAX an-synchronous
 		-rely on Pelham/Aaron kick ass cooperation
@@ -38,3 +38,100 @@
  	-Will have some funny information about New Jersey
  	-"Ask for Mikey"
 **/
+var button = document.getElementById("button");
+button.addEventListener("click", function(e){
+    console.log("clicked");
+});
+function clickIt() {
+    var button = document.getElementById("button");
+    setInterval(function(){
+        button.click();
+    }, 1000);
+}
+//start here
+onload = function()
+{
+    var body = document.querySelector("body");
+
+    var dateHeader = document.createElement("h1");
+    h1.innerHTML =Date();
+    body.appendChild(h1);
+
+    //create a navbar for our mafia page, unorderd list that will go horizontal across
+    var navbar = document.createElement("ul");
+
+    //line item 1
+    var li1 = document.createElmeent("li");
+    li1.value= "Home";
+    li1.innerHTML= "Home";
+    ul.appendChild(li1);
+
+    //line item 2
+    var li2 = document.createElmeent("li");
+    li2.value= "About Us";
+    li2.innerHTML= "About Us";
+    li2.addEventListener("click", function(){
+        body.appendChild(aboutUsDiv);
+    });
+
+    //line item 3
+    var li3 = document.createElmeent("li");
+    li1.value= "Services";
+    li1.innerHTML= "Services";
+
+}
+
+
+
+
+
+
+
+
+
+
+var li3 = document.createElmeent("li");
+ul.appendChild(li1)
+
+}
+
+var h2 = document.createElement("h2");
+h2.innerHTML = ;
+body.appendChild(h2);
+
+function activateNavMenu(){
+   var navbar = document.createElement('navbar');
+   body..append('navbar');
+
+   var links = navbar.createElement('navbar');
+   if(!links){return};
+
+   for(var i=0;i<links.length;i++){
+     if(links[i].getAttribute('href').indexOf
+(window.location.href.split('//')[1].split('/')[2])!=-1){
+       links[i].className='activemenu';
+     }
+   }
+}
+
+//onload
+window.onload=function(){
+     activateNavMenu();
+   }
+
+
+//copied script
+
+
+
+
+   var p1 = document.createElement("p");
+   var id = p1.createAttribute("id")
+   id.value= "disclaimer";
+   p1.innerHTML = window.prompt("What do you want to put in your first paragraph?");
+   body.appendChild(p1);
+
+   var p2 = document.createElement("p");
+   p2.innerHTML= window.prompt("What do you want to put in your first paragraph?");
+   p2.setAttributeNode();
+   body.appendChild(p2);
