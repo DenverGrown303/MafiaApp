@@ -11,6 +11,7 @@ public class Capo {
 	private String specialty;
 	private int age;
 
+	//constructor
 	public Capo() {
 		Don johnson = new Don();
 		johnson.setDonLastNameForTestingPurposes("Tester McPelham");
