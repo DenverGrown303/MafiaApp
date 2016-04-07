@@ -1,0 +1,27 @@
+{
+  "name": "mafia_app",
+  "version": "1.0.0",
+  "description": "omerta",
+  "main": "mafiascripts.js",
+  "scripts": {
+    "test": "node ./tests/testscript.js",
+    "start": "node NodeModule/mafiascripts.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DenverGrown303/MafiaApp.git"
+  },
+  "keywords": [
+    "omerta",
+    "mafia"
+  ],
+  "author": "Pelham Anderson & Aaron Torres",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DenverGrown303/MafiaApp/issues"
+  },
+  "homepage": "https://github.com/DenverGrown303/MafiaApp#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
